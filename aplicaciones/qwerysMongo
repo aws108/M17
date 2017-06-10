@@ -1,0 +1,27 @@
+
+db.movieDetails.find({rated: "PG-13",year:2009}).count()
+
+db.movieDetails.find({"tomato.meter":100}).pretty()
+
+· Contar el num de pelis donde Jeff Bridges salga primero:
+db.movieDetails.find({"actors.0":"Jeff Bridges"}).pretty().count()
+
+· Buscar pelis que tienen como writters Joel Coen y Ethan Coen
+db.movieDetails.find({"writers":["Ethan Coen","Joel Coen"]}).pretty().count()
+
+· Mostrar datos, proyectar, lo que pondrías en el SELECT. Id:0 para que no se muestre y title:1 para que se muestre
+db.movieDetails.find({"writers":["Ethan Coen","Joel Coen"]},{_id:0, title:1}).pretty()
+
+· Variable que obtiene la busqueda de la tabla. Hace un contador de documentos dentro de la base de datos, te los va a ir contando poco a poco
+var c = db.movieDetails.find();
+var doc = function() { return c.hasNext() ? c.next():null;}
+c.objsLeftInBatch()
+
+· Que el tiempo sea mayor de.. Greater than. $gte para mayor o igual
+db.movieDetails.find({runtime: {$gt: 90}}).pretty().count()
+
+· Para hacer un between: mayor o igual o menor o igual
+db.movieDetails.find({runtime: {$gte: 90, $lte:150}}).pretty().count()
+
+· Que salgan sólo las pelis que estén puntuadas por tomato
+db.movieDetails.find({"tomato.meter": {$exists: true}}).count()

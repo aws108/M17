@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+
+
+<ul class="circuits">
+  <% for(var i=0; i<circuits.length; i++) {%>
+    <li class="circuits">
+      <span><%= circuits[i].Nombre %></span>
+      <span><%= circuits[i].Year_fundation %></span>
+      <span><%= circuits[i].Country %></span>
+      <span><%= circuits[i].Last_winner %></span>
+      <span><%= circuits[i].Poleman %></span>
+      <span><%= circuits[i].Laps %></span>
+      <span><%= circuits[i].Circuit_Long %></span>
+    </li>
+  <% } %>
+</ul>
+
+<form action="/quotes" method="POST">
+    	<input type="text" placeholder="Name" name="Name"><br/>
+		<input type="text" placeholder="Year_fundation" name="Year_fundation"><br/>
+		<input type="text" placeholder="Country" name="Country"><br/>
+		<input type="text" placeholder="Last_winner" name="Last_winner"><br/>
+		<input type="text" placeholder="Poleman" name="Poleman"><br/>
+	  	<input type="text" placeholder="Laps" name="Laps"><br/>
+	  	<input type="text" placeholder="Circuit_Long" name="Circuit_Long"><br/>
+	  <br/>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

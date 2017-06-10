@@ -1,0 +1,13 @@
+use video
+
+db.movie
+
+db.movie.insert({"title": "Riders of the Lost Ark", "year": 1981, "imdb": "tt0082971"})
+
+show collections
+
+show dbs
+
+db.movie.find().pretty()
+
+db.movie.find({year : 1981}).pretty()

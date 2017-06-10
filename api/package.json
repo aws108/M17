@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "api",
+  "main": "api",
+  "scripts": {
+    "test": "api",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "api"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6"
+  }
+}

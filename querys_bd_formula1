@@ -1,0 +1,14 @@
+· Cuántos circuitos hay en la base de datos desde 1990 a 1999
+db.circuits.find({Year_fundation: {$gte: 1990, $lte:1999} }).pretty().count()
+
+· Muestra los circuitos cuyo año de fundación esté entre 1990 y 1999
+db.circuits.find({Year_fundation: {$gte: 1990, $lte:1999} }).pretty()
+
+· Número de circuitos en los que Rosberg haya sido el último ganador
+db.circuits.find({Last_winner: "Rosberg" }).pretty().count()
+
+· Encuentra el circuito con la menor longitud de la base de datos
+db.circuits.find().sort({"Circuit_Long":1}).limit(1)
+
+· Encuentra el circuito con la mayor longitud de la base de datos
+db.circuits.find().sort({"Circuit_Long":-1}).limit(-1)

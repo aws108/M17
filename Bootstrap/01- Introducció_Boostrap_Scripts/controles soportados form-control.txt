@@ -1,0 +1,18 @@
+Controles Soportados en bootstrap para el "form-control"
+
+======================================
+
+text
+passwod
+datetime
+datetime-local
+date
+month
+tme
+week
+number
+email
+url
+search
+tel
+color
